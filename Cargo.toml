@@ -1,0 +1,9 @@
+[package]
+name = "iced_circuitikz_gui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+iced = { version = "0.10", features = ["tokio"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "process", "fs", "io-util"] }
+open = "3.2.0"
