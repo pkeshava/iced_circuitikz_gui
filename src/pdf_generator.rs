@@ -5,20 +5,21 @@ use tokio::fs;
 use tokio::process::Command as TokioCommand;
 
 pub async fn generate_pdf(
-    header: &str,
+    preamble: &str,
     body: &str,
     output_filename: &str,
 ) -> Result<(), String> {
     // Assemble the full LaTeX code
     let latex_code = format!(
-        r#"{header}
+        r#"{preamble}
 \begin{{document}}
 {body}
 \end{{document}}
 "#,
-        header = header,
+        preamble = preamble,
         body = body
     );
+
 
     // Write LaTeX code to a temporary file
     let latex_file_path = format!("{}.tex", output_filename);
