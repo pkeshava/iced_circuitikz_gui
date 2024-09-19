@@ -49,7 +49,7 @@ pub enum Message {
 }
 
 impl Application for CircuitikzApp {
-    type Executor = executor::Default;
+    type Executor = executor::Default; // Use Tokio executor
     type Message = Message;
     type Flags = ();
     type Theme = Theme;
